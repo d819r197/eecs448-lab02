@@ -137,8 +137,15 @@ bool LinkedList<T>::removeBack()
 	}
 	else
 	{
+		lastNode = GetNodeAt(m_size);
+		secondintoLast = GetNodeAt(m_size-1);
 
+		secondintoLast -> setNext(nullptr);
 
+		delete lastNode;
+		m_size--;
+
+		isRemoved = true;
 	}
 
 	return(isRemoved);
